@@ -66,9 +66,11 @@ class Driver{
 						switch(op){
 							case 1:
 								switch(v.getParam()){
-									case 1:
+									case 1: //Gracias a Domchi en Stack Overflow por el código para
+										//Ordenar, el cual fue adaptado a este proyecto.
+										//https://stackoverflow.com/questions/5927109/sort-objects-in-arraylist-by-date
 										Collections.sort(carrito, new Comparator<Producto>() { //wtf???????
-  											public int compare(Producto o1, Producto o2) {	   //??
+  											public int compare(Producto o1, Producto o2) {
      											return o1.getFecha().compareTo(o2.getFecha());
   											}
 										});
