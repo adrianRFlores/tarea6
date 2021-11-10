@@ -45,14 +45,31 @@ public class Camara extends Producto implements Fotos, Videos, Portable{
 		return " ";
 	}
 
+	/**
+	 * Devuelve string con la foto, override de la interfaz Foto
+	 * 
+	 * @return el string con el contenido de la foto
+	 */
 	@Override
 	public String tomarFoto(){
 		return "Tomando foto con mi " + getArticulo() + " "  + getMarca();
 	}
+
+	/**
+	 * Devuelve string con el, override de la interfaz Videos
+	 * 
+	 * @return el string con el contenido del video
+	 */
 	@Override
 	public String reproducirVideo(){
 		return "Reproduciendo el video de muestra 'demo.mp4' desde mi " + getArticulo() + " "  + getMarca();
 	}
+
+	/**
+	 * Devuelve string con la portabilidad, override de la interfaz Portable
+	 * 
+	 * @return el string con el contenido del mensaje
+	 */
 	@Override
 	public String serPortable(){
 		return "Bloqueando y guardando mi " + getArticulo() + " "  + getMarca();

@@ -42,13 +42,22 @@ public class SmartTV extends Producto implements Internet, Videos{
 		return "";
 	}
 
+	/**
+	 * Devuelve string con la pagina web, override de la interfaz Internet
+	 * 
+	 * @return el string con el contenido de la pagina web
+	 */
 	@Override
 	public String navegarInternet(){
 		System.out.println("Ingrese la pagina a la que desea navegar: ");
 		return "Visitando direccion web: " + new Scanner(System.in).nextLine() + " desde mi " + getArticulo() + " "  + getMarca();
 	}
 
-
+	/**
+	 * Devuelve string con el, override de la interfaz Videos
+	 * 
+	 * @return el string con el contenido del video
+	 */
 	@Override
 	public String reproducirVideo(){
 		return "Reproduciendo el video de muestra 'demo.mp4' desde mi " + getArticulo() + " "  + getMarca();

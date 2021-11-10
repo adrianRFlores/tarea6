@@ -5,6 +5,13 @@ import java.lang.Math;
 import java.util.Random;
 import java.util.ArrayList;
 
+/**
+ * Maneja todos los flujos de entrada y salida del programa
+ * 
+ * @author Adrian Flores
+ * @version 09/11/2021
+ */
+
 class Vista{
 	
 	/**
@@ -12,8 +19,16 @@ class Vista{
 	 */
 	Scanner scan = new Scanner(System.in);
 
+	/**
+	 * Lector de archivos
+	 */
 	Scanner lector;
 
+	/**
+	 * Lee un archivo y devuelve los contenidos en un arraylist
+	 * 
+	 * @return los contenidos del archivo en un arraylist
+	 */
 	public ArrayList<String> leer(){
 		try{
 			lector = new Scanner(new File("Sucursales.txt"));
@@ -54,6 +69,12 @@ class Vista{
 		}
 	}
 
+	/**
+	 * Muestra los productos y devuelve un entero con la opcion del usuario
+	 * 
+	 * @param prods array de los productos
+	 * @return la opcion del usuario
+	 */
 	public int mostrarProductos(Producto[] prods){
 		for(int i = 0; i<prods.length; i++){
 			System.out.println((i+1) + ". " + prods[i].toString());
@@ -78,6 +99,11 @@ class Vista{
 		}
 	}
 
+	/**
+	 * Muestra los tags de un producto
+	 * 
+	 * @param prod el producto
+	 */
 	public void mostrarAtr(Producto prod){
 		ArrayList<String> tags = prod.getTags();
 		for(int i = 0; i<tags.size(); i++){
@@ -86,6 +112,11 @@ class Vista{
 		System.out.println();
 	}
 
+	/**
+	 * Muestra las acciones posibles y devuelve la opcion del usuario
+	 * 
+	 * @return la opcion del usuario
+	 */
 	public int mostrarAcciones(){
 		System.out.println("\n1. Interactuar con alguna funcionalidad");
 		System.out.println("2. Agregar al carrito");
@@ -107,6 +138,12 @@ class Vista{
 		}
 	}
 
+	/**
+	 * Muestra las funcionalidades de un producto y devuelve un entero con la eleccion del usuario
+	 * 
+	 * @param prod el producto
+	 * @return la eleccion del usuario
+	 */
 	public String getFunc(Producto prod){
 		ArrayList<String> tags = prod.getTags();
 		for(int i = 0; i<tags.size(); i++){
@@ -130,10 +167,21 @@ class Vista{
 		}
 	}
 
+	/**
+	 * Muestra el mensaje dado
+	 * 
+	 * @param mensaje el mensaje a mostrar
+	 */
 	public void mostrar(String mensaje){
 		System.out.println(mensaje);
 	}
 
+	/**
+	 * Muestra los articulos en el carrito y devuelve un entero con la accion del usuario
+	 * 
+	 * @param carrito el carrito
+	 * @return la eleccion del usuario
+	 */
 	public int mostrarCarrito(ArrayList<Producto> carrito){
 		int tot = 0;
 		if(carrito.size() != 0){
@@ -170,6 +218,12 @@ class Vista{
 		}
 	}
 
+	/**
+	 * devuelve un entero en el rango para eliminarlo del carrito
+	 * 
+	 * @param s el limite superior
+	 * @return la entrada del usuario
+	 */
 	public int eliminar(int s){
 		System.out.println("Que elemento desea eliminar?: ");
 		while(true){
@@ -189,6 +243,11 @@ class Vista{
 		}
 	}
 
+	/**
+	 * Muestra los parametros de sorteo y devuelve la entrada del usuario
+	 * 
+	 * @return la entrada del usuario
+	 */
 	public int getParam(){
 		System.out.println("En base a que criterio desea ordenar el carrito?: ");
 		System.out.println("1. Fecha de fabricacion");
@@ -211,6 +270,12 @@ class Vista{
 		}
 	}
 
+	/**
+	 * Devuelve un numero dado el limite superior
+	 * 
+	 * @param lim el limite (inclusivo)
+	 * @return la entrada del usuario
+	 */
 	public int getNum(int lim){
 		int num;
 		while(true){
@@ -230,6 +295,12 @@ class Vista{
 		}
 	}
 
+	/**
+	 * Genera un numero aleatorio de x digitos
+	 * 
+	 * @param la cantidad de digitos -1
+	 * @return el numero
+	 */
 	public int genNumAleatorio(int digitos){
 		Random rand = new Random();
 		int temp = digitos;
@@ -240,6 +311,12 @@ class Vista{
 		return num;
 	}
 
+	/***
+	 * Pide algunos detalles del cliente y genera una factura
+	 * 
+	 * @param carrito el carrito
+	 * @param s las sucursales disponibles
+	 */
 	public void generarFactura(ArrayList<Producto> carrito, ArrayList<String> s){
 		String su;
 		int tot = 0;

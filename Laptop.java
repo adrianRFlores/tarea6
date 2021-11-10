@@ -50,22 +50,42 @@ public class Laptop extends Producto implements Internet, Videos, Juegos, Portab
 		return " ";
 	}
 
+	/**
+	 * Simula la ejecucion de un juego, override de la interfaz Juegos
+	 * 
+	 * @return un string simlando la interaccion
+	 */
 	@Override
 	public String ejecutarJuego(){
 		return "Ejecutando version de prueba de Minecraft...";
 	}
 
+	/**
+	 * Devuelve string con la pagina web, override de la interfaz Internet
+	 * 
+	 * @return el string con el contenido de la pagina web
+	 */
 	@Override
 	public String navegarInternet(){
 		System.out.println("Ingrese la pagina a la que desea navegar: ");
 		return "Visitando direccion web: " + new Scanner(System.in).nextLine() + " desde mi " + getArticulo() + " "  + getMarca();
 	}
 
+	/**
+	 * Devuelve string con el, override de la interfaz Videos
+	 * 
+	 * @return el string con el contenido del video
+	 */
 	@Override
 	public String reproducirVideo(){
 		return "Reproduciendo el video de muestra 'demo.mp4' desde mi " + getArticulo() + " "  + getMarca();
 	}
 
+	/**
+	 * Devuelve string con la portabilidad, override de la interfaz Portable
+	 * 
+	 * @return el string con el contenido del mensaje
+	 */
 	@Override
 	public String serPortable(){
 		return "Bloqueando y guardando mi " + getArticulo() + " "  + getMarca() + "...";

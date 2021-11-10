@@ -42,12 +42,22 @@ public class Celular extends Producto implements Llamadas, Portable{
 		return "";
 	}
 
+	/**
+	 * Devuelve string con la llamada, override de la interfaz Llamada
+	 * 
+	 * @return el string con el contenido de la llamada
+	 */
 	@Override
 	public String hacerLlamada(){
 		System.out.println("Ingrese el numero a llamar: ");
 		return "Llamando al numero " + new Scanner(System.in).nextLine() + " desde mi " + getArticulo() + " "  + getMarca();
 	}
 	
+	/**
+	 * Devuelve string con la portabilidad, override de la interfaz Portable
+	 * 
+	 * @return el string con el contenido del mensaje
+	 */
 	@Override
 	public String serPortable(){
 		return "Bloqueando y metiendo al bolsillo mi " + getArticulo() + " "  + getMarca();

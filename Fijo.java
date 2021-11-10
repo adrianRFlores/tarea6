@@ -38,6 +38,11 @@ public class Fijo extends Producto implements Llamadas{
 		return " ";
 	}
 
+	/**
+	 * Devuelve string con la llamada, override de la interfaz Llamada
+	 * 
+	 * @return el string con el contenido de la llamada
+	 */
 	@Override
 	public String hacerLlamada(){
 		System.out.println("Ingrese el numero a llamar: ");
